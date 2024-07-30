@@ -1,0 +1,6 @@
+turtle_following_node:
+  pose_x : 0.0
+  pose_y : 0.0
+  pose_theta : 0.0
+  kp_linear : 1.5
+  kp_angular : 6.0
