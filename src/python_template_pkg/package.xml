@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>python_template_pkg</name>
+  <version>0.0.0</version>
+  <description>A template package for ROS1 using Python.</description>
+
+  <maintainer email="gingakennis123@icoud.com">Ginga Kennis</maintainer>
+
+  <license>TODO</license>
+  <!-- <url type="website"></url> -->
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend>
+</package>
