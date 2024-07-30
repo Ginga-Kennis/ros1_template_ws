@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 # ROS環境を設定
 source /opt/ros/noetic/setup.bash
