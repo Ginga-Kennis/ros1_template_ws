@@ -1,12 +1,9 @@
 <?xml version="1.0" ?>
 <launch>
-  <!-- Load configuration -->
   <rosparam file="$(find python_template_pkg)/config/turtle_following.yaml" command="load"/>
 
-  <!-- Launch the first turtlesim node -->
   <node name="turtlesim" pkg="turtlesim" type="turtlesim_node" output="screen"/>
 
-  <!-- Launch the teleop_twist_keyboard node to control turtle1 -->
   <group ns="turtle1">
     <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" cwd="node" />
   </group>

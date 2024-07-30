@@ -14,9 +14,9 @@ class TurtleFollowingNode:
         self.spawn_second_turtle()
 
     def load_parameters(self):
-        self.turtle2_init_pose_x = rospy.get_param("~pose_x")    
-        self.turtle2_init_pose_y = rospy.get_param("~pose_y")    
-        self.turtle2_init_pose_theta = rospy.get_param("~pose_theta")    
+        self.turtle2_init_pose_x = rospy.get_param("~turtle2_init_pose_x")    
+        self.turtle2_init_pose_y = rospy.get_param("~turtle2_init_pose_y")    
+        self.turtle2_init_pose_theta = rospy.get_param("~turtle2_init_pose_theta")    
         self.kp_linear = rospy.get_param("~kp_linear")    
         self.kp_angular = rospy.get_param("~kp_angular")    
 
