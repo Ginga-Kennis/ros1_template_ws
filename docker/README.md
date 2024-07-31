@@ -1,6 +1,6 @@
 # Docker イメージのビルド
 ```
-sudo docker build -t ros1_template_ws .
+sudo docker build -t ros1_template_ws_image .
 ```
 
 # X サーバーの設定
@@ -13,8 +13,9 @@ xhost +local:root
 sudo docker run -it \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v /home/oinarisan/ros1_template_ws:/root/ros1_template_ws \
     --name ros1_template_ws_container \
-    ros1_template_ws /bin/bash
+    ros1_template_ws_image /bin/bash
 ```
 
 # コンテナに再接続
