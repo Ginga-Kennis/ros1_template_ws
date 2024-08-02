@@ -1,15 +1,18 @@
-# ベースイメージとして公式のROS Noeticを使用
+# Use the official ROS Noetic as the base image
 FROM ros:noetic-ros-core
 
-# 環境変数の設定
+# Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 
-# 必要なツールのインストール
+# Install necessary tools
 RUN apt-get update && apt-get install -y \
     libxkbcommon-x11-0 \
     x11-apps \
     python3-pip \
-    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install ROS-related tools
+RUN apt-get update && apt-get install -y \
     ros-noetic-turtlesim \
     ros-noetic-teleop-twist-keyboard \
     ros-noetic-ros-base \
@@ -17,20 +20,15 @@ RUN apt-get update && apt-get install -y \
     python3-catkin-tools \
     && rm -rf /var/lib/apt/lists/*
 
-# rosdepの初期化
+# Initialize rosdep
 RUN rosdep init && rosdep update
 
-# リポジトリのクローン
-WORKDIR /root
-RUN git clone https://github.com/Ginga-Kennis/ros1_template_ws.git
+# Add ROS setup to .bashrc
+RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc
 
-# 依存関係のインストール
+# Set working directory
 WORKDIR /root/ros1_template_ws
-RUN rosdep update && rosdep install --from-paths src --ignore-src -r -y
 
-# ワークスペースのビルド
-RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin build"
-
-# エントリーポイントを設定
+# Set entrypoint
 COPY entrypoint.sh /root/entrypoint.sh
 ENTRYPOINT ["/root/entrypoint.sh"]
