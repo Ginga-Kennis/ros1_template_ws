@@ -19,6 +19,7 @@ ros1_template_ws/
     cd ros1_template_ws
     rosdep update
     rosdep install --ignore-src --from-paths src
+    catkin build
     source devel/setup.bash
     ```
 
