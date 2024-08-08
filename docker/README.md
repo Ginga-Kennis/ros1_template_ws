@@ -1,11 +1,11 @@
 # Build Docker image
 ```
-sudo docker build -t ros1_template_ws_image .
+sudo docker build -t ros1_template_ws_img .
 ```
 
 # Set up X server
 ```
-xhost +local:root
+xhost +local:
 ```
 
 # Run Docker container
@@ -15,7 +15,7 @@ sudo docker run -it \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v /path/to/ros1_template_ws:/root/ros1_template_ws \
     --name ros1_template_ws_container \
-    ros1_template_ws_image /bin/bash
+    ros1_template_ws_img /bin/bash
 ```
 
 # Reconnect to the container

@@ -2,10 +2,7 @@
 
 # ROS環境を設定
 source /opt/ros/noetic/setup.bash
-
-# X11設定
-export DISPLAY=$DISPLAY
-export LIBGL_ALWAYS_INDIRECT=1
+source /root/ros1_template_ws/devel/setup.bash
 
 # 引数として渡されたコマンドを実行
 exec "$@"
