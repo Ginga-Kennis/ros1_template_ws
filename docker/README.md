@@ -9,12 +9,14 @@ xhost +local:
 ```
 
 # Run Docker container
+- Replace /PATH/TO/ros1_template_ws with the absolute path to your ROS workspace on your host machine
+- Replace USERNAME with the username specified in the Dockerfile or your host system's username
 ```
 docker run -it \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v /home/ginga/ros1_template_ws:/ros1_template_ws \
-    --user ginga \
+    -v /PATH/TO/ros1_template_ws:/ros1_template_ws \
+    --user USERNAME \
     --name ros1_template_ws_cont \
     ros1_template_ws_img /bin/bash
 ```
