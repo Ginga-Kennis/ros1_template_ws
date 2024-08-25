@@ -15,7 +15,7 @@ xhost +local:
 docker run -it \
     -e DISPLAY=$DISPLAY \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v /PATH/TO/ros1_template_ws:/ros1_template_ws \
+    -v /PATH/TO/ros1_template_ws:/home/USERNAME/ros1_template_ws \
     --user USERNAME \
     --name ros1_template_ws_cont \
     ros1_template_ws_img /bin/bash

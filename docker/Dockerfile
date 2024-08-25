@@ -39,7 +39,6 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Set entrypoint
-# Set entrypoint
 # The base image already has an entrypoint, so it is not necessary to define another one here.
 # If you need to override or add additional initialization steps, you can uncomment the lines below.
 # COPY entrypoint.sh /entrypoint.sh
